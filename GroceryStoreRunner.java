@@ -6,7 +6,7 @@ class GroceryStoreRunner{
 		GroceryStore.storeName="SMMS";
 		GroceryStore.type="All in One";
 		GroceryStore.noOfEmployes=12;
-        GroceryStore.onlineDelivary=true;
+        GroceryStore.onlineShoping=true;
 	    GroceryStore.noOfFloure=3;
 	    GroceryStore.typeOfPackage="Paper";
 	    GroceryStore.cashOnDelivary=true;
@@ -19,20 +19,19 @@ class GroceryStoreRunner{
 	    GroceryStore.partnership="With Many Companys";
 	
 		GroceryStore.printGroceryStoreDetails();
+				
+		String storeName=GroceryStore.getStoreName();
 		
-		
-		
-		String name=GroceryStore.storeName();
 		if(storeName=="SMMS")
 		{
-			System.out.println("Store name is Shree Malai Mahadeswara Swamy Store");
+			System.out.println("Store name is Shree Malai Mahadeswara Swamy Provision Store");
 		}
 		else{
 			System.out.println("Store Name is Wrong");
 		}
 		System.out.println("Details about Grocery Store is stopped printing on the console");
 		
-	}
+	}		
 	
 	
 }

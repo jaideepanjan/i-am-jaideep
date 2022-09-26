@@ -3,7 +3,7 @@ class GroceryStore{
 	static String storeName;
 	static String type;
 	static int noOfEmployes;
-	static boolean onlineDelivary;
+	static boolean onlineShoping;
 	static int noOfFloure;
 	static String typeOfPackage;
 	static boolean cashOnDelivary;
@@ -13,6 +13,7 @@ class GroceryStore{
 	static int storeRooms;
 	static long licenceNo;
 	static long gstNo;
+	static String partnership;
 	
 	
 	
@@ -28,9 +29,9 @@ class GroceryStore{
     {
 		noOfEmployes=value;	
     }
-	static void setOnlineDelivary(boolean value)
+	static void setOnlineShoping(boolean value)
     {
-		onlineDelivary=value;	
+		onlineShoping=value;	
     }
 	static void setNoOfFloure(int value)
     {
@@ -56,9 +57,9 @@ class GroceryStore{
     {
 		language=value;	
     }
-	static void setStoreRoom(String value)
+	static void setStoreRooms(int value)
     {
-		storeroom=value;	
+		storeRooms=value;	
     }
 	static void setLicenceNO(long value)
     {
@@ -68,9 +69,13 @@ class GroceryStore{
     {
 		gstNo=value;	
     }
+	 static void setPartnership(String value)
+    {
+		partnership=value;	
+    }
 	
 	
-	static String getName()
+	static String getStoreName()
 	{
 		return storeName;
 	}
@@ -83,9 +88,9 @@ class GroceryStore{
 		return noOfEmployes;
 	}
 	
-    static boolean getOnlineDelivary()
+    static boolean isOnlineShoping()
 	{
-		return onlineDelivary;
+		return onlineShoping;
 	}
 	
     static int getNoOfFloure()
@@ -98,12 +103,12 @@ class GroceryStore{
 		return typeOfPackage;
 	}
 	
-    static boolean getCashOnDelivary()
+    static boolean isCashOnDelivary()
 	{
-		return storeName;
+		return cashOnDelivary;
 	}
 	
-    static boolean getOffers()
+    static boolean isOffers()
 	{
 		return offers;
 	}
@@ -117,9 +122,9 @@ class GroceryStore{
 	{
 		return language;
 	}
-	static int getStoreroom()
+	static int getStorerooms()
 	{
-		return storeroom;
+		return storeRooms;
 	}
 	static long getLicenceNo()
 	{
@@ -128,6 +133,29 @@ class GroceryStore{
 	static long getGSTNo()
 	{
 		return gstNo;
+	}
+	static String getPartnership()
+	{
+		return partnership;
+	}
+	
+	static void printGroceryStoreDetails()
+	{
+	System.out.println(storeName);
+	System.out.println(type);
+	System.out.println(noOfEmployes);
+	System.out.println(onlineShoping);
+	System.out.println(noOfFloure);
+	System.out.println(typeOfPackage);
+	System.out.println(cashOnDelivary);
+	System.out.println(offers);
+	System.out.println(billingType);
+	System.out.println(language);
+	System.out.println(storeRooms);
+	System.out.println(licenceNo);
+	System.out.println(gstNo);
+	System.out.println(partnership);	
+		
 	}
 	
 }

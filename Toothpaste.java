@@ -1,5 +1,5 @@
 class Toothpaste{
-	static setString name;
+	static String name;
 	static String brand;
 	static boolean isiMark;
 	static String content;
@@ -112,7 +112,7 @@ class Toothpaste{
 	{
 		return brand;
 	}
-	static boolean getISIMark()
+	static boolean isISIMark()
 	{
 		return isiMark;
 	}
@@ -184,7 +184,30 @@ class Toothpaste{
 	{
 		return price;
 	}
-	
+	static void printToothpasteDetails()
+	{
+		System.out.println(name);
+		System.out.println(brand);
+		System.out.println(isiMark);
+		System.out.println(content);
+	    System.out.println(company);
+	    System.out.println(dagno);
+	    System.out.println(netweight);
+	    System.out.println(formula);
+	    System.out.println(hashtag); 
+	    System.out.println(website);
+	    System.out.println(surveyno);
+	    System.out.println(type);
+	    System.out.println(color);
+	    System.out.println(made);
+	    System.out.println(technology);
+	    System.out.println(since);
+	    System.out.println(containerType);
+	    System.out.println(length);
+	    System.out.println(breadth);
+	    System.out.println(price);
+		
+	}	
 	
 }	
 	
