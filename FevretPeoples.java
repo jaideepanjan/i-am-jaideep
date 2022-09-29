@@ -64,7 +64,7 @@ class FevretPeoples{
    {
 	   if(nickName!=null && nickName.length()>=4)
 	   {
-		   System.out.println("Real Point :"+nickName);
+		   System.out.println("Real Point : "+nickName);
 		   return nickName;
 	   }
 	   return "update1";

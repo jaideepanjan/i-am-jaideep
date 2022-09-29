@@ -16,6 +16,7 @@ class FevretPeoplesRunner{
 		FevretPeoples.update1(2,"Agraja");
 		FevretPeoples.delete("Kiran");
 		FevretPeoples.delete1(5,"Bhai");
+		FevretPeoples.display();
 		
 	}
 }
