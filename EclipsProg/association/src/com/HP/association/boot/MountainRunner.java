@@ -7,6 +7,7 @@ public class MountainRunner {
 		
 		Mountain mountain = new Mountain("Choudeswari",245);
 		mountain.visitTemple();
+		mountain.nameIs("shiva");
 
 	}
 

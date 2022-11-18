@@ -24,4 +24,9 @@ public class Location {
 		System.out.println("Country " +country);
 	}
 
+	public void printMadu() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
