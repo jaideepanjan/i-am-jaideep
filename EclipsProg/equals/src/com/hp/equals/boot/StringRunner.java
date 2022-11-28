@@ -12,7 +12,7 @@ public class StringRunner {
 		System.out.println(concated);
 		System.out.println("...........................");
 		
-		int agraja = concated.charAt(22);
+		int agraja = concated.charAt(10);
 		System.out.println(agraja);
 		System.out.println("............................");
 		
@@ -24,11 +24,11 @@ public class StringRunner {
 		System.out.println(appa);
 		System.out.println("................................");
 		
-		int geleya=name.codePointBefore(agraja);
+		int geleya=name.codePointBefore(3);
 		System.out.println(geleya);
 		System.out.println(".................................");
 		
-		int dosta=concated.codePointCount(amma, geleya);
+		int dosta=concated.codePointCount(3,5);
 		System.out.println(dosta);
 		System.out.println("...............................");
 		
@@ -51,6 +51,7 @@ public class StringRunner {
 		byte[] dada=concated.getBytes();
 		System.out.println(dada);
 		System.out.println("...................................");
+		
 		
 		byte[] honey=concated.getBytes();
 		System.out.println(honey);
