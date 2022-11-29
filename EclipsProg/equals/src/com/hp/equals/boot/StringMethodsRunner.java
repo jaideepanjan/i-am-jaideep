@@ -59,7 +59,7 @@ public class StringMethodsRunner {
 			}
 		}
         System.out.println("To find G in love name");
-        String word="G";
+        String word="a";
         String[] repeates=love.split(" ");
         int counts=0;
         for (int m = 0; m < repeates.length; m++) {
@@ -68,8 +68,8 @@ public class StringMethodsRunner {
 			}
         System.out.println("The word "+word +" Occurs " +counts + "Times in the above String");
         System.out.println("Love is blind and unconditional");
-	}
+	          }
 
+           }
+	   }
 }
-	}
-	}
