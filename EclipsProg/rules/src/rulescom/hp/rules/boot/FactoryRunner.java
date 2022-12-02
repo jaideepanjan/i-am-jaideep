@@ -1,6 +1,7 @@
 package rulescom.hp.rules.boot;
 
 import rulescom.hp.rules.bridge.Factory;
+import rulescom.hp.rules.followers.FactoryRules;
 
 public class FactoryRunner {
 
