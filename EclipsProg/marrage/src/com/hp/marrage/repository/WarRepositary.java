@@ -24,7 +24,7 @@ public interface WarRepositary {
 		return null;
 		
 	}
-	default WarDTO findStartedDateLesserThanOrEqualto(LocalTime startedIn) {
+	default WarDTO findStartedDateLesserThanOrEqualto(LocalDateTime localDateTime) {
 		return null;
 	}
 	default WarDTO findByStartDateAndEndDate(LocalTime startedIn, LocalTime endedIn) {
