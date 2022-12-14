@@ -6,7 +6,9 @@ public class Array {
 
 	public static void main(String[] args) {
 		
-		String names[]= {"Jaideep","Jagadeesh","Harshitha","Prash","Rudresh"};		
+		String names[]= {"Jaideep","Jagadeesh","Harshitha","Prashanth","Rudresh"};
+		
+		System.out.println(names[1]);
 		
 		int name=names.length;
 		System.out.println("Lenght of aray  : " +name);
