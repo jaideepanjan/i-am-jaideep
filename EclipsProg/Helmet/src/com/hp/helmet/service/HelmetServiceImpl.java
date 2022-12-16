@@ -2,10 +2,11 @@ package com.hp.helmet.service;
 
 import com.hp.helmet.dto.HelmetDTO;
 import com.hp.helmet.repository.HelmetRepositary;
+import com.hp.helmet.service.HelmetService;
 
 public class HelmetServiceImpl implements HelmetService  {
 	
-	public HelmetRepositary helmetRepositary;
+	private HelmetRepositary helmetRepositary;
 	
 	
 
@@ -24,7 +25,7 @@ public class HelmetServiceImpl implements HelmetService  {
 		boolean validePrice=false;
 		boolean valideColor=false;
 		
-		if(dto.getBrand()>=4&&dto.getBrand().length()<=15) {
+		if(dto.getBrand().length()>4&&dto.getBrand().length()<=15) {
 			System.out.println("Valid Brand : "+dto.getBrand());
 			valideBrand=true;
 		}
