@@ -7,7 +7,7 @@ public class HelmetRepositaryImpl implements HelmetRepositary {
       
 	
 	private HelmetDTO[] helmet=new HelmetDTO[10];
-	int index=0;
+	private int index=0;
 	
 	
 	@Override

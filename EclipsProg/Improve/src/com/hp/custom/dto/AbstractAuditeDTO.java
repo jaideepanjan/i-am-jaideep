@@ -3,7 +3,7 @@ package com.hp.helmet.dto;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public abstract class AbstractAuditeHelmetDTO implements Serializable {
+public class AbstractAuditeHelmetDTO implements Serializable {
 	
 	private String createdBy;
 	private LocalDateTime createdDate;
