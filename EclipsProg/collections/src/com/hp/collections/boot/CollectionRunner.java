@@ -9,18 +9,18 @@ public class CollectionRunner {
 		
 	 
 		String sweet1="Champakali";
-		String sweet2="Champakali";
-		String sweet3="Champakali";
-		String sweet4="Champakali";
-		String sweet5="Champakali";
-		String sweet6="Champakali";
-		String sweet7="Champakali";
-		String sweet8="Champakali";
-		String sweet9="Champakali";
-		String sweet10="Champakali";
-		String sweet11="Champakali";
-		String sweet12="Champakali";
-		String sweet13="Champakali";
+		String sweet2="Burfi";
+		String sweet3="Gulab Jamoon";
+		String sweet4="Rasamalai";
+		String sweet5="Pestry ";
+		String sweet6="Dood Peda";
+		String sweet7="HalKova";
+		String sweet8="Mysoor Pak";
+		String sweet9="Karjikayi";
+		String sweet10="Laddu";
+		String sweet11="Badam Poori";
+		String sweet12="Gilebi";
+		String sweet13="Badoosha";
 		
 		Collection<String> collection= new LinkedList<String>();
 		
