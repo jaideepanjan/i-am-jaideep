@@ -1,0 +1,41 @@
+Test 2     Date:6/1/23
+
+
+Q6)
+
+  LinkedList  
+  -> Order in nature.
+  -> Data store in the form of index
+  -> Data accesable is easy 
+  -> Used to manipulate the data
+  -> 
+
+  ArrayList
+ ->Unorder in nature 
+ ->Data store in the form of nodes
+ ->Data readability is easy 
+ ->Dificult to manipulate the data
+ 
+ 
+ Q4)
+ a. If we make class as final or private then the class can not be inherited by other classes.
+ 
+ 
+ Q10)
+ 
+     Polymorphism means one thing in many forms 
+ 
+   
+  Ststic Polymorphism : it is also called as compail time Polymorphism, method overloding is the example of compail time Polymorphism
+   
+   method overloading means the more than one function having same function name with different functionality is called as method overloading
+   
+   
+   Dynamic Polymorphism: it is also called as run time Polymorphism, method overriding is the example for method Overriding 
+   here the function which hase the same functionality with the implementation without changing the signature is called as method overriding.
+   
+   
+ 
+
+
+
