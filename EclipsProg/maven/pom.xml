@@ -3,6 +3,15 @@
   <groupId>com.xworkz</groupId>
   <artifactId>maven</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+  <spring.version>5.3.24</spring.version>
+  </properties>
+  <dependencies>
+  <dependency><groupId>org.springframework</groupId>
+  <artifactId>spring-context</artifactId>
+  <version>${spring.version}</version>
+  </dependency>
+  </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
