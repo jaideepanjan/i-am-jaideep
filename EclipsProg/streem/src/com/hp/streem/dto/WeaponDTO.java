@@ -37,10 +37,9 @@ public class WeaponDTO {
 		return super.hashCode();
 	}
 	
-	@Override
-	public int compareTo(Object o) {
-		this.name.compareTo(getName());
-		return 0;
+	public int compareTo(WeaponDTO o) {
+		
+		return o.name.compareTo(this.name);
 	}
 	
 	@Override
