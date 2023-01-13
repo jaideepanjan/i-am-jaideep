@@ -8,8 +8,9 @@ import com.xworkz.bean.thing.Actor;
 import com.xworkz.bean.thing.Rocket;
 import com.xworkz.bean.thing.Season;
 
-@ComponentScan("com.xworkz.been")
+
 @Configuration
+@ComponentScan("com.xworkz.bean")
 public class BeanConfiguration {
 	
 	public BeanConfiguration() {
