@@ -1,4 +1,4 @@
-package com.hp.ecception.bridge;
+package com.hp.exceptions.bridge;
 
 public interface XworkzRule {
 	

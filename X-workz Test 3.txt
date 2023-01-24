@@ -1,0 +1,41 @@
+Q1) Collection is a frame work,to overcome the drawback of array,
+
+Hierarchy of collection is 
+ 
+ Collection extends Iterable
+ 
+ List, Queue, Set extends Collection
+ 
+ List: List implements Arraylist,Linkedlist
+ Linkedlist implements Deque
+ 
+ Queue: Deque extends Queue
+        PriorityQueue,ArrayQueue implements  Queue 		
+		
+ Set:  		Implements Hashset and LinkedHashSet
+ 
+ 
+  Main interface : list, set, Queuq.
+  
+  
+  List: It maintain the Insertion order
+        It is index based
+		it increases the readability for the user
+		it allows duplicatees
+		it allows nuss
+		
+ Set: It doesnot maintain the insertion order 
+      It doesnot allow the duplicates
+      	  
+ Q17. 1)Maven: To downlode the dependancyes for the project. 
+      3)Tomcat: Its a server to accesses the resorces from clint to server.
+	  4)Quarkus:To check the validation of rhe project.
+	  5)SonarQube: 
+	  6)Server:It is a system it consists of resorces it gets the request is the request content
+	  is fount it gives the respond 200,if the request not found gives te respond as 404,if any
+	  miss match in the request it shows 500.
+	  
+	  
+		
+ 		
+	  
