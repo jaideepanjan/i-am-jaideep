@@ -45,35 +45,35 @@ public class WebSeries extends HttpServlet {
 		write.print("<h4>");
 		write.print("<span style='color:green'>");
 		write.print("web series name is " + name);
-		write.print("<span/>");
-		write.print("<h4/>");
+		write.print("</span>");
+		write.print("</h4>");
 
 		write.print("<h4>");
 		write.print("<span style='color:red'>");
 		write.print("web series language   " + language);
-		write.print("<span/>");
-		write.print("<h4/>");
+		write.print("</span>");
+		write.print("</h4>");
 
 		write.print("<h4>");
 		write.print("<span style='color:blue'>");
 		write.print("web series episode  " + episodes);
-		write.print("<span/>");
-		write.print("<h4/>");
+		write.print("</span>");
+		write.print("</h4>");
 
 		write.print("<h4>");
 		write.print("<span style='color:yellow'>");
 		write.print("is web series is ott platform " + ott);
-		write.print("<span/>");
-		write.print("<h4/>");
+		write.print("</span>");
+		write.print("</h4>");
 
 		write.print("<h4>");
 		write.print("<span style='color:pink'>");
 		write.print("web series budjet  " + budjet);
-		write.print("<span/>");
-		write.print("<h4/>");
+		write.print("</span>");
+		write.print("</h4>");
 
-		write.print("<body/>");
-		write.print("<html/>");
+		write.print("</body>");
+		write.print("</html>");
 
 		resp.setContentType("text/html");
 

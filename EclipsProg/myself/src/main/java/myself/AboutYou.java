@@ -76,56 +76,56 @@ public class AboutYou extends HttpServlet {
 		fill.print("<h3>");
 		fill.print("<span style='color:red'>");
 		fill.print("Your name is "+name);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:black'>");
 		fill.print("Your nick name is "+nickName);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:bluee'>");
 		fill.print("Your  father name is "+fatherName);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:green'>");
 		fill.print("Your mother name is "+motherName);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:wheat'>");
 		fill.print("Is you have siblig "+sibling);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:Purple'>");
 		fill.print("Your date of birth is "+dob);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:pink'>");
 		fill.print("Your age is "+age);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:maroon'>");
 		fill.print("Your height is "+height);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:magenta'>");
 		fill.print("Your weight is "+weight);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:teal'>");
@@ -136,65 +136,65 @@ public class AboutYou extends HttpServlet {
 		fill.print("<h3>");
 		fill.print("<span style='color:cyan'>");
 		fill.print("You basically from "+basicallyFrom);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:olive'>");
 		fill.print("Currently staying in "+currentlyStaying);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:maroon'>");
 		fill.print("Your married status "+married);
-		fill.print("<span/>");
+		fill.print("</span>");
 		fill.print("<h3/>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:violet'>");
 		fill.print("Your fevretb food is "+fevFood);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:pink'>");
 		fill.print("Your fevret color is "+fevColor);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:yellow'>");
 		fill.print("Your goal is "+goal);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:red'>");
 		fill.print("Your friend name is "+friendName);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:green'>");
 		fill.print("Your Mobile number is "+mobileNo);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:blue'>");
 		fill.print("Your email ID is "+emailId);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
 		fill.print("<h3>");
 		fill.print("<span style='color:black'>");
 		fill.print("Is you working "+working);
-		fill.print("<span/>");
-		fill.print("<h3/>");
+		fill.print("</span>");
+		fill.print("</h3>");
 		
-		fill.print("<html/>");
-		fill.print("<body/>");
+		fill.print("</html>");
+		fill.print("</body>");
 		
 		resp.setContentType("text/html");
 		

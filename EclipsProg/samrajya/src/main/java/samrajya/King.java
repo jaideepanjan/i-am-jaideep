@@ -45,14 +45,14 @@ public class King extends HttpServlet{
 		write.print("<h3>");
 		write.print("<span style='color:pink'>");
 		write.print("name of the King is "+name);
-		write.print("<span/>");
-		write.print("<h3/>");
+		write.print("</span>");
+		write.print("</h3>");
 		
 		write.print("<h3>");
 		write.print("<span style='color:black'>");
 		write.print("region of the King is "+region);
-		write.print("<span/>");
-		write.print("<h3/>");
+		write.print("</span>");
+		write.print("</h3>");
 
 		write.print("<h3>");
 		write.print("<span style='color:red'>");
@@ -63,17 +63,17 @@ public class King extends HttpServlet{
 		write.print("<h3>");
 		write.print("<span style='color:green'>");
 		write.print("King's date of birth "+dob);
-		write.print("<span/>");
-		write.print("<h3/>");
+		write.print("</span>");
+		write.print("</h3>");
 		
 		write.print("<h3>");
 		write.print("<span style='color:white'>");
 		write.print("King's date of death  "+dod);
-		write.print("<span/>");
-		write.print("<h3/>");
+		write.print("</span>");
+		write.print("</h3>");
 		
-		write.print("<body/>");
-		write.print("<html/");
+		write.print("</body>");
+		write.print("</html");
 		
 		resp.setContentType("text/html");
 		
