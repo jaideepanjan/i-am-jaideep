@@ -66,7 +66,7 @@ public class Contact extends HttpServlet {
 		
 		if(convLong>100000) {
 			write.print("<span style='color:green'/>");
-			write.print(" Mobile Number is valid "+mobileNo);
+			write.print(" Mobile Number is valid "+convLong);
 		}
 		else {
 			write.print("<span style='color:red'/>");
@@ -84,8 +84,14 @@ public class Contact extends HttpServlet {
 			write.print("Comments is not vallid");
 		}
 		
+		write.print("<h4>");
+		write.print("<span style='color:blue'/>");
+		write.print("Details sent successfully.....");
+		write.print("</h4>");
+		
 		write.print("<br>");
-		write.print("<a href=\"Location.html\">Go back to Location details</a>");
+		write.print("<a href=\"Location.html\">Go to Location details</a>");
+		write.print("<br>");
 		write.print("<a href=\"index.html\">Back to home page</a>");
 		write.print("</h1>");
 		

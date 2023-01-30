@@ -80,11 +80,25 @@ public class Location extends HttpServlet {
 			write.print("<span style='color:red'/>");
 			write.print("Destination  is not vallid");
 		}
+		write.print("<br>");
+		if(gender.length()>3) {
+			write.print("<span style='color:green'/>");
+			write.print(" Gender is valid " + gender);
+		}
+		else {
+			write.print("<span style='color:red'/>");
+			write.print("gender  is not selected");
+		}
 
+		write.print("<h4>");
+		write.print("<span style='color:blue'/>");
+		write.print("Details sent successfully.....");
+		write.print("</h4>");
 		
 
 		write.print("<br>");
-		write.print("<a href=\"Contact.html\">Go back to Contact details</a>");
+		write.print("<a href=\"Contact.html\">Go to Contact details</a>");
+		write.print("<br>");
 		write.print("<a href=\"index.html\">Back to home page</a>");
 		write.print("</h1>");
 
