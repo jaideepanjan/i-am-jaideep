@@ -114,7 +114,7 @@ public class DisplayController {
 		 return "index.jsp";		 
 	 }
 	 
-	 @GetMapping("/education")
+	 @GetMapping("/educationDto")
 	 public String onEducation(Model model) {
 		 System.out.println("Running Education method ");
 		EducationDTO edu=new EducationDTO();
