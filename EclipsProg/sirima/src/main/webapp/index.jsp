@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>X-Workz</title>
+<title>X-workz</title>
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -16,24 +17,9 @@
 	crossorigin="anonymous"></script>
 	
 	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+
 </head>
 <body>
-
-<nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"> <img src="https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png" width="80" height="48" class="d-inline-block align-text-top"/> </a>
-    <a href="Casino.jsp" >Casino</a>
-    <a href="Beach.jsp">Beach </a>
-  </div>
-</nav>
-
-
-
-
-
-
-
-<h1>Do what makes you happy....</h1>
 
 </body>
 </html>
