@@ -1,20 +1,17 @@
-package com.xworkz.aeroplane.configuration;
+package com.xworkz.forest.configuration;
 
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.beans.propertyeditors.ClassArrayEditor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-
-public class AeroplaneWebInit extends AbstractAnnotationConfigDispatcherServletInitializer implements WebMvcConfigurer {
-
-	public AeroplaneWebInit() {
+public class Webinit extends AbstractAnnotationConfigDispatcherServletInitializer implements WebMvcConfigurer {
+	
+	public Webinit() {
 		System.out.println("Created"+this.getClass().getSimpleName());
 	}
-	
-	
-	
+
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		System.out.println("Running getRootConfigClasses method ");
@@ -23,27 +20,21 @@ public class AeroplaneWebInit extends AbstractAnnotationConfigDispatcherServletI
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		System.out.println("Running getServletConfigClasses method");
-		return new Class[] {AeroplaneConfiguration.class} ;
+		System.out.println("Running getServletConfigClasses method ");
+		return new Class[] {Configuration.class};
 	}
 
 	@Override
 	protected String[] getServletMappings() {
-		System.out.println("Running getServletMappings method ");
-		return new String[] {"/"};	
-		}
+	System.out.println("Running getServletMappings method");
+		return new String[] {"/"};
+	}
 	
-	
-	@Override	
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+	@Override
+	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		System.out.println("Running configureDefaultServletHandling method");
 		configurer.enable();
 	}
-	
-	
-	
-	
-
 	
 	
 

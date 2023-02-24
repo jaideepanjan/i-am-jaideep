@@ -22,8 +22,8 @@
 					src="https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png"
 					alt="" width="90" height="60" class="d-inline-block align-text-top">
 
-				<a href="plane">Aeroplane</a>
-				<a href="AeroplaneSearch.jsp">Search</a>
+				<a href="Forest.jsp">Forest</a>
+				<a href="ForestSearch.jsp">Search</a>
 				
 			</div>
 			
