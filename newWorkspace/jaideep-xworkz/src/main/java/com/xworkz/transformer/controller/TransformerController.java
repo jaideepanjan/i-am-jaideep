@@ -25,6 +25,7 @@ public class TransformerController {
 	private TransformerService transformerService;
 
 	public List<String> quSt = Arrays.asList("ISI", "IEC", "IEEE");
+	public List<String> brand = Arrays.asList("EVR Power", "Alstom T&D India", "Kirloskar Electric Company Limited","Kotsons Pvt. Ltd","Gujarat Transformers Pvt. Ltd.");
 
 	public TransformerController() {
 		System.out.println("Created" + this.getClass().getSimpleName());
@@ -47,8 +48,17 @@ public class TransformerController {
 	public String onTransformer(Model model) {
 		System.out.println("Running onTransformer get method");
 		model.addAttribute("qS", quSt);
+		model.addAttribute("brand", brand);
 		return "Transformer";
 	}
+	
+	@GetMapping("/searchByBrand")
+	public String onSearchByBrand(@RequestParam String brand,Model model) {
+		System.out.println("Running onSearchByBrand in controller "+brand);
+		List<TransformerDTO> list=this.transformerService.findByBrand(brand);
+		model.addAttribute("list", list);
+		return "SearchByBrand";
+		}
 
 	@PostMapping("/energy")
 	public String onValentine(TransformerDTO dto, Model model) {
@@ -60,9 +70,12 @@ public class TransformerController {
 			return "Sucess";
 		}
 		model.addAttribute("qS", quSt);
+		model.addAttribute("brand", brand);
 		model.addAttribute("errors", violation);
 		model.addAttribute("dto", dto);
 		return "Transformer";
 	}
+	
+	
 
 }

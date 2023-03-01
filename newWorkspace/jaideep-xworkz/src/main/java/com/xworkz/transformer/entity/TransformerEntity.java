@@ -3,6 +3,7 @@ package com.xworkz.transformer.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -10,6 +11,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="java_tables.transformer_table")
+@NamedQuery(name="findByBrand",query = "select ent from TransformerEntity ent where ent.brand=:brand")
 public class TransformerEntity {
 	
 	
@@ -17,6 +19,9 @@ public class TransformerEntity {
 	@Id
 	@Column(name="t_id")
 	private int id;
+	
+	@Column(name="t_brand")
+	private String brand;
 	
 	@Column(name="t_type")
 	private String type;

@@ -1,5 +1,6 @@
 package com.xworkz.transformer.dto;
 
+import javax.persistence.Column;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -11,8 +12,13 @@ import lombok.Data;
 public class TransformerDTO {
 	
 	
+	private int id;
+	
 	@NotNull(message="Type can not be null")
-	@Size(min=3,max=20,message="type should be more than 3 and less than 20 charecter")
+	private String brand;
+	
+	@NotNull(message="Type can not be null")
+	@Size(min=3,max=20,message="Type should be more than 3 and less than 20 charecter")
 	private String type;
 	
 	@NotNull(message="Type can not be null")
@@ -24,7 +30,7 @@ public class TransformerDTO {
 	private String qualityStandards;
 	
 	@NotNull(message="Coil Type can not be null")
-	@Size(min=3,max=20,message="type should be more than 3 and less than 20 charecter")
+	@Size(min=3,max=20,message="coil type should be more than 3 and less than 20 charecter")
 	private String coilType;
 	
 	@NotNull(message="Type can not be null")
@@ -36,7 +42,7 @@ public class TransformerDTO {
 	private double weight;
 	
 	@NotNull(message="Type Of Cooling can not be null")
-	@Size(min=3,max=20,message="type should be more than 3 and less than 20 charecter")
+	@Size(min=3,max=20,message="Type of cooling should be more than 3 and less than 20 charecter")
 	private String typeOfCooling;
 	
 	@NotNull(message="Cost can not be null")

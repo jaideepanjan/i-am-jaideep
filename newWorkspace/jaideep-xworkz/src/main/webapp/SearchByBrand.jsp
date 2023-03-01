@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +25,7 @@
 
 				
 				<a href="index.jsp">Home</a>
+				<a href="energy">Transformer</a>
 				
 			</div>
 			
@@ -33,24 +36,55 @@
 <h3>
 	<span style="color: red;">${message}</span>
 </h3>
-<form action="search" method="get">
-	Search By Id <input type="text" name="id" /> <input type="submit"
-		value="search" class="btn btn-primary" />
+<form action="searchByBrand" method="get">
+	Search By brand <input type="search" name="brand" /> <input type="submit"
+		value="search"  />
 </form>
 <div>
 
+<table class="table table-bordered">
 
-	<h3 style="color: black;">Search Results</h3>
-	Type : ${dto.type} <br> Phase : ${dto.phases } <br>
-	Quality Standards : ${qualityStandards} <br> Coil Type : ${dto.coilType } <br>
-	KVA : ${dto.kva }<br>TypeOfCooling:${dto.typeOfCooling}
-	 <br>
-	Weight : ${dto.weight }
-	 <br>
-	Cost : ${dto.cost }
+<tr>
+     <th>Id</th>
+     <th>Brand</th>
+     <th>Type</th>
+     <th>Phases</th>
+     <th>Quality Standards</th>
+     <th>Coil Type</th>
+      <th>KVA</th>
+     <th>Weight</th>
+     <th>Type Of Cooling</th>
+     <th>Cost</th>    
+     
+</tr>
+
+<c:forEach items="${list}" var="b">
+
+
+     <tr>
+     <td>${b.id} </td>
+     <td>${b.brand}</td>
+     <td>${b.type}</td>
+     <td>${b.phases}</td>
+     <td>${b.qualityStandards}</td>
+     <td>${b.coilType}</td>
+     <td>${b.kva}</td>
+     <td>${b.weight}</td>
+     <td>${b.typeOfCooling}</td>
+     <td>${b.cost}</td>
+     
+     
+     </tr>
+     
+
+</c:forEach>
+
+
+</table>
+
+
+	
 	
 </div>
-
-
 </body>
 </html>

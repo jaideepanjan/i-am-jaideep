@@ -35,6 +35,11 @@ public class VehicalRunner {
 		System.out.println(ship.getType()); 
 		 System.out.println(ship.getName()); 
 		 System.out.println(ship.getNoOfWeels());
+		 
+//	System.out.println(ship.toString());
+		 
+		 
+		 
 		
 		System.out.println("<-------------Pholimorphisum------------->");
 		

@@ -25,6 +25,9 @@
 
 				<a href="energy">Transformer</a>
 				
+				<a href="SearchByBrand.jsp">Search by Brand</a>
+				<a href="Search.jsp">Search by Id</a>
+				
 				
 			</div>
 			

@@ -30,10 +30,19 @@
 		
 		<h1>Enter Transformer details....</h1>
 		
-		
+		<c:forEach items="${errors}" var="e">
+		 <h4>${e.message}</h4>
+		</c:forEach>
 		<form action="energy" method="post">
 		
 		<pre>
+		
+		Brand<select name="brand" >
+		<option value="">Select</option>
+		<c:forEach items="${brand}" var = "com">
+		<option value="${com}">${com}</option>
+		</c:forEach>
+		</select>
 		
 		Type<input type="text" name="type">
 		

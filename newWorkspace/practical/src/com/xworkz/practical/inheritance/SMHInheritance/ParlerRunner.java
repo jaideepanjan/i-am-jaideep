@@ -15,6 +15,12 @@ public class ParlerRunner {
 		parler2.hairStyle();
 		
 		
+		System.out.println("-----------------------------");
+		parler2.setName("Hair cut");
+		
+		System.out.println(parler2.getName());
+		
+		
 		WomensParler parler3=new WomensParler();
 		parler3.eybro();
 		parler3.goodLook();

@@ -1,6 +1,8 @@
 package com.xworkz.transformer.service;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
@@ -33,6 +35,7 @@ public class TransformerServiceImpl implements TransformerService {
 			if (entity != null) {
 				System.out.println("entity is found in theservice for id" + id);
 				TransformerDTO dto = new TransformerDTO();
+				dto.setBrand(entity.getBrand());
 				dto.setType(entity.getType());
 				dto.setPhases(entity.getPhase());
 				dto.setQualityStandards(entity.getQualityStandards());
@@ -70,12 +73,52 @@ public class TransformerServiceImpl implements TransformerService {
 			entity.setTypeOfCooling(dto.getTypeOfCooling());
 			entity.setType(dto.getType());
 			entity.setCost(dto.getCost());
+			entity.setBrand(dto.getBrand());
 
 			this.repositry.save(entity);
 
 			return Collections.emptySet();
 		}
 
+	}
+
+	@Override
+	public List<TransformerDTO> findByBrand(String brand) {
+
+		System.out.println("Running findByBrand in service " + brand);
+
+		if (brand != null && !brand.isEmpty()) {
+			System.out.println("ChatName is valid... calling repo...");
+
+			List<TransformerEntity> entities = this.repositry.findByBrand(brand);
+
+			List<TransformerDTO> listDTO = new ArrayList<TransformerDTO>();
+
+			for (TransformerEntity entity : entities) {
+				TransformerDTO dto1 = new TransformerDTO();
+				dto1.setId(entity.getId());
+				dto1.setBrand(entity.getBrand());
+				dto1.setType(entity.getType());
+
+				dto1.setPhases(entity.getPhase());
+				dto1.setQualityStandards(entity.getQualityStandards());
+				dto1.setCoilType(entity.getCoilType());
+				dto1.setKva(entity.getKva());
+				dto1.setWeight(entity.getWeight());
+				dto1.setTypeOfCooling(entity.getTypeOfCooling());
+				dto1.setCost(entity.getCost());
+
+				listDTO.add(dto1);
+			}
+
+			System.out.println("Size of dtos " + listDTO.size());
+			System.out.println("Size of entities " + entities.size());
+			return listDTO;
+
+		} else {
+			System.out.println("Transformer Brand is invalied");
+		}
+		return TransformerService.super.findByBrand(brand);
 	}
 
 }

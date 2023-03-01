@@ -6,11 +6,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>X-workz</title>
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"rel="stylesheet"integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"crossorigin="anonymous">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"/>
-
 </head>
 <body>
 
@@ -21,17 +21,13 @@
 					src="https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png"
 					alt="" width="90" height="60" class="d-inline-block align-text-top">
 
-				<a href="energy">Transformer</a>
-				<a href="Search.jsp">Search by Id</a>
-				<a href="SearchByBrand.jsp">Search by Brand</a>
-				<a href="index.jsp">Home</a>
+				<a href="energy">Chats</a>
 				
 				
 			</div>
 			
 		</nav>
-		
-		<h1>Data sent Sucessfylly......</h1>
+		<h1>Welcome to our page.....</h1>
 
 </body>
 </html>
