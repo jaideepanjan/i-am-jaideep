@@ -33,6 +33,8 @@ public class TransformerRepoImpl implements TransformerRepositry {
 		factory.close();
 		return false;
 	}
+	
+	
 
 	@Override
 	public TransformerEntity findById(int id) {
@@ -58,5 +60,44 @@ public class TransformerRepoImpl implements TransformerRepositry {
 		}
 
 	}
+
+	@Override
+	public boolean update(TransformerEntity entity) {
+		System.out.println("Running update in repo  ");
+		EntityManager manager=this.entityManagerFactory.createEntityManager();
+		try {
+			EntityTransaction transaction=manager.getTransaction();
+			transaction.begin();
+			manager.merge(entity);
+			transaction.commit();
+			return true;
+		}
+		finally {
+			manager.close();
+		}
+		
+		}
+
+	@Override
+	public boolean deleteById(int id) {
+		System.out.println("Running in deleteById in repositary");
+		EntityManager manager=this.entityManagerFactory.createEntityManager();
+		try {
+			EntityTransaction transaction=manager.getTransaction();
+			transaction.begin();
+			TransformerEntity entity=manager.find(TransformerEntity.class, id);
+			manager.remove(entity);
+			System.out.println("Enter Repositary in "+entity);
+			transaction.commit();
+			return true;			
+		}
+		finally {
+			manager.close();
+		}
+		
+		
+	}
+	
+	
 
 }

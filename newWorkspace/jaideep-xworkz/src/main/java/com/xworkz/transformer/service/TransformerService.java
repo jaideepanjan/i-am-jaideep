@@ -11,6 +11,9 @@ import com.xworkz.transformer.dto.TransformerDTO;
 public interface TransformerService {
 
 	Set<ConstraintViolation<TransformerDTO>> ValidateAndSave(TransformerDTO dto);
+	Set<ConstraintViolation<TransformerDTO>> ValidateAndUpdate(TransformerDTO dto);
+	
+	
 
 	default TransformerDTO findById(int id) {
 		return null;
@@ -20,5 +23,9 @@ public interface TransformerService {
 	default List<TransformerDTO> findByBrand(String brand){
 		return Collections.emptyList();
 	}
+	
+	boolean deleteById(int id);
+	
+	
 
 }

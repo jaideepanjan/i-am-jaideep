@@ -8,6 +8,7 @@ import com.xworkz.transformer.entity.TransformerEntity;
 public interface TransformerRepositry {
 
 	boolean save(TransformerEntity entity);
+	boolean update(TransformerEntity entity);
 
 	default TransformerEntity findById(int id) {
 		return null;
@@ -16,5 +17,8 @@ public interface TransformerRepositry {
 	default List<TransformerEntity> findByBrand(String brand) {
 		return Collections.emptyList();
 	}
+	
+	boolean deleteById(int id);
+	
 
 }

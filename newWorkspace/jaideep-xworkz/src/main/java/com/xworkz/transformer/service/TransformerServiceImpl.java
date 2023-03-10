@@ -44,6 +44,7 @@ public class TransformerServiceImpl implements TransformerService {
 				dto.setWeight(entity.getWeight());
 				dto.setTypeOfCooling(entity.getTypeOfCooling());
 				dto.setCost(entity.getCost());
+				dto.setId(entity.getId());
 
 				return dto;
 			}
@@ -53,6 +54,8 @@ public class TransformerServiceImpl implements TransformerService {
 
 	@Override
 	public Set<ConstraintViolation<TransformerDTO>> ValidateAndSave(TransformerDTO dto) {
+		System.out.println("Running ValidateAndSave in Service ");
+		
 		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 		Validator validator = factory.getValidator();
 		Set<ConstraintViolation<TransformerDTO>> constraintViolations = validator.validate(dto);
@@ -80,6 +83,44 @@ public class TransformerServiceImpl implements TransformerService {
 			return Collections.emptySet();
 		}
 
+	}
+
+	@Override
+	public Set<ConstraintViolation<TransformerDTO>> ValidateAndUpdate(TransformerDTO dto) {
+		System.out.println("Running ValidateAndUpdate in service......");
+
+		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+		Validator validator = factory.getValidator();
+		Set<ConstraintViolation<TransformerDTO>> violations = validator.validate(dto);
+
+		if (violations != null && !violations.isEmpty()) {
+			System.out.println("Violations are error");
+			return violations;
+		} else {
+			System.out.println("Violations is not there in dto, can save the data");
+
+			TransformerEntity entity = new TransformerEntity();
+
+			entity.setId(dto.getId());
+			entity.setBrand(dto.getBrand());
+			entity.setType(dto.getType());
+			entity.setPhase(dto.getPhases());
+			entity.setQualityStandards(dto.getQualityStandards());
+			entity.setCoilType(dto.getCoilType());
+			entity.setKva(dto.getKva());
+			entity.setWeight(dto.getWeight());
+			entity.setTypeOfCooling(dto.getTypeOfCooling());			
+			entity.setCost(dto.getCost());
+			
+			boolean saved=this.repositry.update(entity);
+			System.out.println(saved);
+			System.out.println(entity);
+			
+			return Collections.emptySet();
+
+		}
+
+		
 	}
 
 	@Override
@@ -120,5 +161,17 @@ public class TransformerServiceImpl implements TransformerService {
 		}
 		return TransformerService.super.findByBrand(brand);
 	}
+
+	@Override
+	public boolean deleteById(int id) {
+		System.out.println("Running deleteById in service");
+		if(id>0) {
+			this.repositry.deleteById(id);
+			
+		}
+		return true;
+	}
+	
+	
 
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,42 +15,79 @@
 </head>
 <body>
 
-<nav class="navbar navbar-dark bg-dark">
-			<!-- Navbar content -->
-			<div class="container-fluid">
-				<img
-					src="https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png"
-					alt="" width="90" height="60" class="d-inline-block align-text-top">
-
-				
-				<a href="index.jsp">Home</a>
-				
-			</div>
-			
-		</nav>
-
-<h1> Search Here...!</h1>
-
-<h3>
-	<span style="color: red;">${message}</span>
-</h3>
-<form action="search" method="get">
-	Search By Id <input type="text" name="id" /> <input type="submit"
-		value="search" class="btn btn-primary" />
-</form>
-<div>
+	<nav class="navbar navbar-dark bg-dark">
+		<!-- Navbar content -->
+		<div class="container-fluid">
+			<img
+				src="https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png"
+				alt="" width="90" height="60" class="d-inline-block align-text-top">
 
 
-	<h3 style="color: black;">Search Results</h3>
-	Type : ${dto.type} <br> Phase : ${dto.phases } <br>
-	Quality Standards : ${qualityStandards} <br> Coil Type : ${dto.coilType } <br>
-	KVA : ${dto.kva }<br>TypeOfCooling:${dto.typeOfCooling}
-	 <br>
-	Weight : ${dto.weight }
-	 <br>
-	Cost : ${dto.cost }
-	
-</div>
+			<a href="index.jsp">Home</a>
+
+		</div>
+
+	</nav>
+
+	<h1>Enter Id no Here...!</h1>
+
+	<h3>
+		<span style="color: red;">${message}</span>
+	</h3>
+	<form action="search" method="get">
+		Search By Id <input type="search" name="id" /> <input type="submit"
+			value="search" />
+	</form>
+	<div>
+
+		<table class="table table-bordered">
+
+			<tr>
+				<th>Id</th>
+				<th>Brand</th>
+				<th>Type</th>
+				<th>Phases</th>
+				<th>Quality Standards</th>
+				<th>Coil Type</th>
+				<th>KVA</th>
+				<th>Weight</th>
+				<th>Type Of Cooling</th>
+				<th>Cost</th>
+				<th>Edit</th>
+				<th>Delete</th>
+
+			</tr>
+
+
+
+
+			<tr>
+				<td>${dto.id}</td>
+				<td>${dto.brand}</td>
+				<td>${dto.type}</td>
+				<td>${dto.phases}</td>
+				<td>${dto.qualityStandards}</td>
+				<td>${dto.coilType}</td>
+				<td>${dto.kva}</td>
+				<td>${dto.weight}</td>
+				<td>${dto.typeOfCooling}</td>
+				<td>${dto.cost}</td>
+				<td><a href="update?id=${dto.id}">Edit</a></td>
+				<td><a href="delete?id=${dto.id}">Delete</a></td>
+
+
+			</tr>
+
+
+
+
+
+		</table>
+
+
+
+
+	</div>
 
 
 </body>
