@@ -12,6 +12,8 @@ import lombok.Data;
 @Entity
 @Table(name="java_tables.transformer_table")
 @NamedQuery(name="findByBrand",query = "select ent from TransformerEntity ent where ent.brand=:brand")
+@NamedQuery(name="displayAll",query = "select table from TransformerEntity table")
+@NamedQuery(name="findByTwo",query = "select table from TransformerEntity table where table.qualityStandards=:qs or table.typeOfCooling=:toc")
 public class TransformerEntity {
 	
 	

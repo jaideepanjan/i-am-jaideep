@@ -5,10 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.xworkz.transformer.dto.TransformerDTO;
 import com.xworkz.transformer.entity.TransformerEntity;
 
 @Repository
@@ -40,9 +43,14 @@ public class TransformerRepoImpl implements TransformerRepositry {
 	public TransformerEntity findById(int id) {
 		System.out.println("find by id in dao" + id);
 		EntityManager entityManager = this.entityManagerFactory.createEntityManager();
-		TransformerEntity fromDb = entityManager.find(TransformerEntity.class, id);
-		entityManager.close();
+		
+		try{
+			TransformerEntity fromDb = entityManager.find(TransformerEntity.class, id);
 		return fromDb;
+		}
+		finally {
+		entityManager.close();
+		}
 	}
 
 	@Override
@@ -98,6 +106,49 @@ public class TransformerRepoImpl implements TransformerRepositry {
 		
 	}
 	
+
+	@Override
+	public List<TransformerEntity> displayAll() {
+		System.out.println("Running displayAll in repository ");
+		EntityManager manager=this.entityManagerFactory.createEntityManager();
+		
+		try {
+			Query query=manager.createNamedQuery("displayAll");
+			List list=query.getResultList();
+			list.forEach(e-> System.out.println(e));
+			return list;
+			
+		}
+		catch(PersistenceException per) {
+			per.printStackTrace();
+		}
+		finally {
+			manager.close();
+		}
+		return TransformerRepositry.super.displayAll();
+	}
 	
+	
+	@Override
+	public List<TransformerEntity> searchByTwo(String qualityStandards, String typeOfCooling) {
+		System.out.println("Running searchByTwo innrepositary");
+		EntityManager manager=this.entityManagerFactory.createEntityManager();
+		
+		try {
+			Query query=manager.createNamedQuery("findByTwo");
+					query.setParameter("qs", qualityStandards);
+					query.setParameter("toc", typeOfCooling);
+					List list=query.getResultList();
+			list.forEach(g->System.out.println(g));
+			return list;
+		}
+		catch(PersistenceException pe) {
+			pe.printStackTrace();
+		}
+		finally {
+			manager.close();
+		}
+		return TransformerRepositry.super.searchByTwo(qualityStandards, typeOfCooling);
+	}
 
 }

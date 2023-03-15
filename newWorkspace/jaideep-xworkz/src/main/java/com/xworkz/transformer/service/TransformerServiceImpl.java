@@ -10,6 +10,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -157,7 +158,7 @@ public class TransformerServiceImpl implements TransformerService {
 			return listDTO;
 
 		} else {
-			System.out.println("Transformer Brand is invalied");
+			System.out.println("Transformer Brand is invalid");
 		}
 		return TransformerService.super.findByBrand(brand);
 	}
@@ -171,6 +172,49 @@ public class TransformerServiceImpl implements TransformerService {
 		}
 		return true;
 	}
+	
+	
+
+
+	@Override
+	public List<TransformerDTO> displayAll() {
+		System.out.println("running displayAll in service");
+		List<TransformerEntity> list=this.repositry.displayAll();
+		List<TransformerDTO> dto=new ArrayList<>();
+		if(list!=null&&!list.isEmpty()) {
+			for(TransformerEntity entity: list) {
+				TransformerDTO dto1=new TransformerDTO();
+				BeanUtils.copyProperties(entity, dto1);
+				dto.add(dto1);
+			}
+			return dto;
+		}else {
+			System.out.println("no data founf in db");
+			return Collections.emptyList();
+		}
+		
+	}
+	
+	@Override
+	public List<TransformerDTO> searchByTwo(String qualityStandards, String typeOfCooling) {
+		System.out.println("running searchByTwo in service");
+		List<TransformerEntity> list=this.repositry.searchByTwo(qualityStandards, typeOfCooling);
+		List<TransformerDTO> dto=new ArrayList<>();
+		if(qualityStandards!=null&&!qualityStandards.isEmpty() || typeOfCooling!= null && !typeOfCooling.isEmpty()) {
+			for(TransformerEntity entity: list) {
+				TransformerDTO dto1=new TransformerDTO();
+				BeanUtils.copyProperties(entity, dto1);
+				dto.add(dto1);
+			}
+			return dto;
+		}else {
+			System.out.println("no data founf in db");
+			return Collections.emptyList();
+		}
+	}
+	
+	
+	
 	
 	
 

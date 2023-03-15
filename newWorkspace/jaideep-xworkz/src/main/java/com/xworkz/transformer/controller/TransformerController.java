@@ -116,4 +116,30 @@ public class TransformerController {
 		return "SearchByBrand";
 	}
 
+	@GetMapping("/displayAll")
+	public String onDisplayAll(Model model) {
+		System.out.println("Display all in controller");
+		List<TransformerDTO> list = this.transformerService.displayAll();
+		if (list != null ) {
+			model.addAttribute("list", list);
+		} else {
+			model.addAttribute("message", "no data found in db");
+		}
+		return "DisplayTable";
+	}
+
+	@GetMapping("/findByTwo")
+	public String onFindByTwo(@RequestParam String qualityStandards, @RequestParam String typeOfCooling, Model model) {
+		System.out.println("Running findByTwo in controller ");
+		List<TransformerDTO> list = this.transformerService.searchByTwo(qualityStandards, typeOfCooling);
+		if (qualityStandards != null && !qualityStandards.isEmpty()
+				|| typeOfCooling != null && !typeOfCooling.isEmpty()) {
+			model.addAttribute("list1", list);
+		} else {
+			List<TransformerDTO> searchByTwo = this.transformerService.searchByTwo(qualityStandards, typeOfCooling);
+		}
+		return "FindByTwo";
+
+	}
+
 }

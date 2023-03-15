@@ -3,6 +3,8 @@ package com.xworkz.transformer.repositary;
 
 import java.util.Collections;
 import java.util.List;
+
+import com.xworkz.transformer.dto.TransformerDTO;
 import com.xworkz.transformer.entity.TransformerEntity;
 
 public interface TransformerRepositry {
@@ -19,6 +21,20 @@ public interface TransformerRepositry {
 	}
 	
 	boolean deleteById(int id);
+	
+	
+	
+	default List<TransformerEntity> displayAll(){
+		return Collections.emptyList();
+	}
+	
+	default List<TransformerEntity> searchByTwo(String qualityStandards,String typeOfCooling){
+		return Collections.emptyList();
+	}
+	
+	
+	
+
 	
 
 }
