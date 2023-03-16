@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -29,14 +28,20 @@
 				<a href="SearchByBrand.jsp">Search by Brand</a>
 				<a href="Search.jsp">Search by Id</a>
 				<a href="DisplayTable.jsp">Display Table</a>
-				<a href="FindByTwo.jsp">Find By Two</a>
+				<a href="FindByTwo.jsp">Search By Two</a>
 				
 				
 				
 			</div>
 			
 		</nav>
-		<h1>Welcome</h1>
+		<h1>Upload Image </h1>
+		
+		<form action="upload" method="post" enctype="multipart/form-data">
+		Upload : <input type="file" name="pic" />
+		<input type="submit" value="Upload"  />
+		
+		</form>
 
 </body>
 </html>

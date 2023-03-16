@@ -22,6 +22,7 @@
 					alt="" width="90" height="60" class="d-inline-block align-text-top">
 
 				<a href="energy">Chats</a>
+				<a href="ImageUploade.jsp">Uploade Image</a>
 				
 				
 			</div>

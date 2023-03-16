@@ -1,5 +1,11 @@
 package com.xworkz.transformer.configuration;
 
+import java.io.File;
+
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration;
+
+
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -34,6 +40,23 @@ public class WebInit extends AbstractAnnotationConfigDispatcherServletInitialize
 		configurer.enable();
 		
 	}
+	
+//	 @Override
+//	    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+//
+//	        String tempDir="D:\\tatkalika";
+//	        int maxUploadSizeInMb=3 * 1024 * 1024;
+//	        File uploadDirectory = new File("tempDir");
+//
+//	        // register a MultipartConfigElement
+//	        MultipartConfigElement multipartConfigElement =
+//	                new MultipartConfigElement(uploadDirectory.getAbsolutePath(),
+//	                        maxUploadSizeInMb, maxUploadSizeInMb * 2, maxUploadSizeInMb / 2);
+//
+//	        registration.setMultipartConfig(multipartConfigElement);
+//
+//	        super.customizeRegistration(registration);
+//	    }
 	
 	
 
