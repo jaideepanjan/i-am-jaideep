@@ -37,6 +37,9 @@
 		</nav>
 		<h1>Upload Image </h1>
 		
+		<h3 style="color: green;">${successMessage}</h3>
+		<h3 style="color: red;">${errorMessage}</h3>
+		
 		<form action="upload" method="post" enctype="multipart/form-data">
 		Upload : <input type="file" name="pic" />
 		<input type="submit" value="Upload"  />

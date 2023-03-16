@@ -18,8 +18,16 @@ public class TransformerConfiguration {
 	public TransformerConfiguration() {
 		System.out.println("Created" + this.getClass().getSimpleName());
 	}
+	
+	
+	@Bean
+	public MultipartResolver multipartResolver() {
+		System.out.println("Registering MultipartResolver");
+		return new StandardServletMultipartResolver();
+	}
 
 	@Bean
+	@Order(1)
 	public ViewResolver viewResolver() {
 
 		System.out.println("Running ViewResolver method");
@@ -35,11 +43,6 @@ public class TransformerConfiguration {
 
 	}
 
-//	@Bean
-//	public MultipartResolver multipartResolver() {
-//		System.out.println("Registering MultipartResolver");
-//		return new StandardServletMultipartResolver();
-//	}
-//	
+	
 
 }

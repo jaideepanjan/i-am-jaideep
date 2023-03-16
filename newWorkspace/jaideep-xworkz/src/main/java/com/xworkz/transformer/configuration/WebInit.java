@@ -41,22 +41,23 @@ public class WebInit extends AbstractAnnotationConfigDispatcherServletInitialize
 		
 	}
 	
-//	 @Override
-//	    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
-//
-//	        String tempDir="D:\\tatkalika";
-//	        int maxUploadSizeInMb=3 * 1024 * 1024;
-//	        File uploadDirectory = new File("tempDir");
-//
-//	        // register a MultipartConfigElement
-//	        MultipartConfigElement multipartConfigElement =
-//	                new MultipartConfigElement(uploadDirectory.getAbsolutePath(),
-//	                        maxUploadSizeInMb, maxUploadSizeInMb * 2, maxUploadSizeInMb / 2);
-//
-//	        registration.setMultipartConfig(multipartConfigElement);
-//
-//	        super.customizeRegistration(registration);
-//	    }
+	 @Override
+	    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+		 System.out.println("running customizeRegistration in web init");
+
+	        String tempDir="D:\\fileUplode";
+	        int maxUploadSizeInMb=3 * 1024 * 1024;
+	        File uploadDirectory = new File(tempDir);
+
+	        // register a MultipartConfigElement
+	        MultipartConfigElement multipartConfigElement =
+	                new MultipartConfigElement(uploadDirectory.getAbsolutePath(),
+	                        maxUploadSizeInMb, maxUploadSizeInMb * 2, maxUploadSizeInMb / 2);
+
+	        registration.setMultipartConfig(multipartConfigElement);
+
+        super.customizeRegistration(registration);
+	    }
 	
 	
 
