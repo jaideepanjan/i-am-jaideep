@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-C:\Users\91636\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1525866590.index
-\xworkz-jaideep-cm\src\main\java
