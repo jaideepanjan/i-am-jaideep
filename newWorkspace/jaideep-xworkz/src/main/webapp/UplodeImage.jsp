@@ -29,6 +29,7 @@
 				<a href="Search.jsp">Search by Id</a>
 				<a href="DisplayTable.jsp">Display Table</a>
 				<a href="FindByTwo.jsp">Search By Two</a>
+				<a href="index.jsp">Home</a>
 				
 				
 				

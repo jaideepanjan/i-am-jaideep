@@ -45,8 +45,8 @@ public class WebInit extends AbstractAnnotationConfigDispatcherServletInitialize
 	    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
 		 System.out.println("running customizeRegistration in web init");
 
-	        String tempDir="D:\\fileUplode";
-	        int maxUploadSizeInMb=3 * 1024 * 1024;
+	        String tempDir="D:\\fileUpload";
+	        int maxUploadSizeInMb=9 * 3072 * 3072;
 	        File uploadDirectory = new File(tempDir);
 
 	        // register a MultipartConfigElement

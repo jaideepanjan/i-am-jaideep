@@ -30,12 +30,13 @@
 	</nav>
 	
 	<h1>Displaying Image</h1>
-	
+<form action="download" method="get">
 	<img  src="/download?fileName=agraja.jpeg" height="350" width="200"/>
 	<img  src="/download?fileName=imp.jpeg" height="350" width="200"/>
+	<img  src="/download?fileName=1.jpeg" height="350" width="200"/>
 	
 	
-	
+	</form>
 	
 	
 </body>
