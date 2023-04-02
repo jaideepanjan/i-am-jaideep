@@ -29,12 +29,14 @@ Hierarchy of collection is
       	  
  Q17. 1)Maven: To downlode the dependancyes for the project. 
       3)Tomcat: Its a server to accesses the resorces from clint to server.
-	  4)Quarkus:To check the validation of rhe project.
+	  4)Quarkus:To perform the validation of rhe project.
 	  5)SonarQube: 
 	  6)Server:It is a system it consists of resorces it gets the request is the request content
 	  is fount it gives the respond 200,if the request not found gives te respond as 404,if any
 	  miss match in the request it shows 500.
 	  
+	  
+ 	  
 	  
 		
  		
