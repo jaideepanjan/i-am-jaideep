@@ -26,55 +26,136 @@
 				src="https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png"
 				alt="" width="90" height="60" class="d-inline-block align-text-top">
 
-           <form class="d-flex">
+			<form class="d-flex">
 
-			<a href="index.jsp">Home</a>
-            </form>
+				<a href="index.jsp">Home</a>
+				<a href="SignIn.jsp">Sign In</a> 
+			</form>
 
 
 
 		</div>
 
 	</nav>
-	<h1>Welcome to our AJ projects</h1>
 	
-	<c:forEach items = "${error}" var = "e">
-<p> <span style ="color:red"> ${e.message}</span></p>
-</c:forEach>
+
 	
 	
-	<form action="ivar" method="post" >
-	<pre>
-	User Id <input type="text" name="userId" />
 	
-	Email <input type="email" name="email" />
+	<div align="center">
 	
-	Mobile <input type="number" name="mobileNumber" /><span id="numloc"></span>	
+	<h1 style="color: green">${message}</h1>
+	<h5 style="color: red;">${messag}<br>
+		<c:forEach items="${errors}" var="e">${e.message}</c:forEach>
+	</h5>
 	
-	Password <input type="password" name="password" id="userPassword" Onchange="validatePassword()" /> <span id="passwordError" Style="color:red"></span>
-	
-	
-	Confirm Password <input type="password" name="confirmPassword" />
-	
-	Accept Agreement <input type="checkbox" name="acceptAgreement" id="agreementID" onclick="Agreement()" />
-	
-	<input type="submit" value="Sign Up" class="btn btn-primary"/>
-	
-	
+
+		<form action="ivar" method="post">
+			<pre>
+	<table>
+  <tr>
+    <td>User Id </td>
+    <td><input type="text" name="userId" id="userName" onchange="ValideName()" /> 
+						<span id="userIdError" style="color: red"></span> 
+							<span id="displayUserId" style="color: red"></span> <span id="emailError" style="color: red"></span>
+		<span id="display" style="color: red"></span></td> </tr>
+  <tr>
+    <td>Email </td><td><input type="email" name="email" id="emailId" onchange="valideEmail()"/></td>
+    
+  </tr>
+  <tr>
+    <td>Mobile Number</td>
+    <td><input type="number" name="mobileNumber" id="userMobile" onchange="ValideMobile()"/>
+    <span id="mobileError" style="color: red"></span>
+		<span id="displayMobileNumber" style="color: red"></span></td>
+  </tr>
+  <tr>
+    <td>Password </td>
+    <td><input type="password" name="password" id="userPassword" Onchange="validatePassword()"/>
+							  <span id="passwordError"	Style="color: red"></span>
+							  <input type="checkbox" onclick="myFunction1()">Show Password</td>
+  </tr>
+  <tr>
+    <td>Confirm Password </td>
+    <td><input type="password" name="confirmPassword" id="userConfirmPassword" onblur="validateConfirmPassword()"/>
+    <span id="passwordCompare" style="color: red"></span>
+		<input type="checkbox" onclick="myFunction2()">Show Confirm Password  </td>
+  </tr>
+  
+  <tr>
+    <td>Accept Agreement</td>
+    <td><input type="checkbox" name="acceptAgreement" id="agreementConfirm" onclick="ValideName()" /></td>
+  </tr>
+  
+</table>	
 	</pre>
-	
-	</form>
-	
+
+    <div>   <button type="submit" class="btn btn-success" id="agreementCon" disabled="true">Sign Up</button> 
+</div>
+		</form>
+	</div>
+	<h3 style="color:red;">${password}</h3>
+
 	<script>
 	
+	<!--user id valoidation using js and ajax-->
 	
-	function myFunction(){
-		var X = document.getelementById("userPassword");
-		if(x.type=="password"){
-			x.type="text";
+	
+	function ValideName() {
+		var user = document.getElementById('userName');
+		var uservalue = user.value;
+		console.log(uservalue);
+		if (uservalue != null && uservalue != "" && uservalue.length > 3
+				&& uservalue.length < 30) {
+			console.log('valide name');
+			const xhttp = new XMLHttpRequest();
+			console.log('Running in ajax');
+			console.log(user);
+			console.log(uservalue);
+			
+			xhttp.open("GET", "http://localhost:8080/xworkz-jaideep-cm/userId/"+ uservalue);
+			xhttp.send();
+			xhttp.onload = function() {
+				console.log(this);
+				document.getElementById("displayUserId").innerHTML = this.responseText
+			}
+			
+			
+			var agree = document.getElementById('agreementConfirm');
+			console.log(agree.checked);
+			if (agree.checked) {
+				document.getElementById('agreementCon').disabled = false;
+			}
+			document.getElementById('userIdError').innerHTML = '';
+		} else {
+			console.log('invalide name');
+			document.getElementById('agreementCon').disabled = 'disabled';
+			document.getElementById('userIdError').innerHTML = 'Plese enter valide name, min 4 and max 30 character';
+		}
+	}
+	
+	<!-- password validation--> 
+	
+	function validatePassword(){
+		var p = document.getelementById("userPassword");
+		if(p.type=="password"){
+			p.type="text";
 		}
 		else{
-			x.type="password";
+			p.type="password";
+		}
+		
+	}
+	
+	<!--confirm password validation--> 
+	
+	function validateConfirmPassword(){
+		var cp = document.getelementById("userConfirmPassword");
+		if(cp.type=="password"){
+			cp.type="text";
+		}
+		else{
+			cp.type="password";
 		}
 		
 	}
@@ -84,9 +165,9 @@ function acceptAgreement() {
 			var agreement = document.getElementById('agreementId');
 			console.log(agreement.checked);
 			if (agreement.checked) {
-				document.getElementById('submitId').disabled = false;
+				document.getElementById('agreementCon').disabled = true;
 			} else {
-				document.getElementById('submitId').disabled = 'disabled';
+				document.getElementById('agreementCon').disabled = 'disabled';
 			}
 		}
 	
@@ -119,36 +200,70 @@ function validateform(){
 
 function validateNumber(){
 	
-	var mobileNumber = document.myForm.mobileNumber.value;
-	console.log(mobileNumber);
+	var mobileNumber = document.getElementById('userMobile');
+	var mobileNumberValue=mobileNumber.value;
+	console.log(mobileNumberValue);
 	
-	if(isNaN(mobileNumber) || mobileNumber == null || mobileNumber==""){
-		console.log(mobileNumber.checked);
-		document.getElementById("numloc").innerHTML = "Enter Numeric value only";
-		return false;
+	if(mobileNumberValue!=null && mobileNumberValue!=""&& mobileNumberValue.length==10){
+		
+		console.log('valid Mobile number ');
+		const xhttp=new XMLHttpRequest();
+		console.log('Running in ajax');
+		console.log(mobileNumberValue);
+		
+		xhttp.open("GET","http://localhost:8080/xworkz-jaideep-cm/mobileNum/"+mobileNumberValue);
+		
+		xhttp.send();
+		
+		xhttp.onload=function(){
+			console.log(this);
+			
+			document.getElementById('displayMobileNumber').innerHTML=this.respondText;
+		}
+		document.getElementById('mobileError').innerHTML ='';
+		
+	}else{
+		console.log('invalid mobile');
+		document.grtElrmentById('mobileError').innerHTML='Please enter valid mobile number digits must be 10 ';
 	}
-	else{
-		return true;
-	}	
 }
 
 
 
 function validateEmail(){
 	
-	var email = document.myForm.email.value;
+	var email = document.getElementById('emailId');
 	
-	var atposition = email.indexOf("@");
-	var dotposition = email.lastindexOf(".");
+	var emailValue=userEmail.value;
+	console.log(emailValue);
 	
-	if(atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){
+	if(emailValue!=null && emailValue!="" && emailValue.length>4 &&emailValue.length<40){
+		console.log('valid email');
 		
-		alert("Please enter a valid e-mail address\n atposition:"+atposition+"\n dotposition:" + dotposition);
+		const xhtml=new XMLHttpRequest();
 		
-		return false;
+		console.log('Running in ajax');
+		console.log(emailValue);
+		
+		xhttp.open("GET","http://localhost:8080/xworkz-jaideep-cm/email/"+emailValue);
+		
+		xhttp.send();
+		
+		xhttp.onload=function(){
+			
+			console.log(this);
+			document.getElementById("display").innerHtml = this.responseText
+		}document.getElementById('emailError').innerHTML = '';
+		
+		}else {
+			console.log('invalid email');
+			document.getElementById('emailError').innerHTML = 'please enter valid email min 4 and max 40 charecters ';
+		}
 	}
-	return true;
-}
+	
+	
+	
+
 	
 	function validPassword(){
 		var userPassword = document.getElementById('userPassword');
@@ -175,12 +290,16 @@ function validateEmail(){
 			document.getElementById('passwordError').innerHTML = 'please enter valid password';
 		}
 		}
+		
+		
+		
+		
 	}
 	
 
 </script>
-	
-	
+
+
 
 </body>
 </html>

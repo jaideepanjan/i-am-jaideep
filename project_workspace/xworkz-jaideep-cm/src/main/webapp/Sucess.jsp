@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>AJ-projects</title>
+<title>AJ projects</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -28,19 +28,16 @@
 
 
 			<a href="Signup.jsp">Sign Up</a> 
-			<a href="SignIn.jsp">Sign In</a> 
-			
-
-
-
+			<a href="SignIn.jsp">Sign in</a> 
+			<a href="index.jsp">Home</a> 
 		</div>
 
 	</nav>
 	
+	<div align="center">
+	 <h1 Style="color:green:">Update Sucessfully</h1>
+	</div>
 	
-	<h1>Welcome to our AJ projects</h1>
 	
-</form>
-
 </body>
 </html>
