@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>AJ projects</title>
+<title>Update Password</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -34,7 +34,7 @@
 	</nav>
 	
 	<div align="center">
-	 User Name:${userId}
+	<h1>  Update your password here </h1>
 	</div>
 	
 	<div align="center">
@@ -43,11 +43,8 @@
 	<table>
 	
 	<tr>
-	
 	<td>User Id</td>
-	<td><input type="text" name="userId" value=${userId} readonly="readonly"/> </td>
-	
-	
+	<td><input type="text" name="userId" value="${userID}" /> </td>
 	</tr>
 	
 	<tr>
@@ -55,7 +52,7 @@
 	<td>New Password</td>
 	<td><input type="password" name="password" id="userPassword"/>
 	<span id="passwordError" style="color: red" ></span>
-	<input type="checkbox" onclick="newPassword()" />Show Password </td>
+	<input type="checkbox" onclick="newPassword()" />Show</td>
 	
 	
 	</tr>
@@ -66,7 +63,7 @@
 	<td><input type="password" name="confirmPassword" id="uConfirmPassword" onblur="ValidePassword()" />
 	<span id="passwordError" style="color:red"></span>
 	<span id="passwordCompare" style="color:red"></span>
-	<input type="checkbox" onclick="confirmPassword()" />Show Confirm Password </td>
+	<input type="checkbox" onclick="confirmPassword()" />Show</td>
 	
 	
 	</tr>
@@ -107,7 +104,7 @@
 	function ValidePassword(){
 		
 		var userPassword = document.getElementById('userPassword');
-		var userConfirmPassword = document.getElementById('userConfirmPassword');
+		var userConfirmPassword = document.getElementById('uConfirmPassword');
 		var userPasswordvalue = userPassword.value;
 		var userConfirmPasswordvalue = userConfirmPassword.value;
 		console.log(userPasswordvalue);

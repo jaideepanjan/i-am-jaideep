@@ -1,31 +1,40 @@
 package com.xworkz.project.entity;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name="signup_table")
 @NamedQuery(name="findAll",query="select ent from ProjectEntity ent")
 @NamedQuery(name="findByUserId",query="select count(*) from ProjectEntity ent where ent.userId=:userBy")
 @NamedQuery(name="findByEmail",query="select count(*) from ProjectEntity ent where ent.email=:emailBy")
 @NamedQuery(name="findByMobile",query="select count(*) from ProjectEntity ent where ent.mobileNumber=:mobileBy")
-@NamedQuery(name="findByUserIdAndPassword",query="select ent from ProjectEntity ent where ent.userId=:uId and ent.password=:pswd")
-@NamedQuery(name="email",query = "select ent from ProjectEntity ent where ent.email=:id")
+@NamedQuery(name="uIdandPsw",query="select ent from ProjectEntity ent where ent.userId=:uId")
+@NamedQuery(name="reEmail",query = "select ent from ProjectEntity ent where ent.email=:eId")
 
-@NamedQuery(name="updateLoginCount",query = "update ProjectEntity ent set ent.loginCount=:count where ent.userId=:userID" )
+@NamedQuery(name="updateLoginCount",query = "update ProjectEntity ent set ent.loginCount=:cut where ent.userId=:uID" )
 @NamedQuery(name="updatePassword",query = "update ProjectEntity ent set ent.password=:up , ent.resetPassword=:urp where ent.userId=:uu" )
 
 
-public class ProjectEntity {
+public class ProjectEntity implements Serializable {
 	
 
 	@Id
@@ -63,6 +72,16 @@ public class ProjectEntity {
     private int loginCount;
 	
 	@Column(name = "resetPassword")
-	private Boolean resetPassword;
+	private boolean resetPassword;
+	
+	@Column(name="passwordChangedTime")
+	private LocalTime passwordChangedTime;
+	
+	
+	@Column(name = "picName")
+	private String picName;
+	
+	@OneToMany(mappedBy = "projectEntity",fetch=FetchType.EAGER, cascade=CascadeType.ALL )
+	private List<TechnologyEntity> technologyes;
 
 }

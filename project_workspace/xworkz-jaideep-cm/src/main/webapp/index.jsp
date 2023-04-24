@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="ISO-8859-1">
 <title>AJ-projects</title>
 <link
@@ -28,6 +29,8 @@
 
 
 			<a href="Signup.jsp">Sign Up</a> 
+			
+			
 			<a href="SignIn.jsp">Sign In</a> 
 			
 
@@ -40,7 +43,8 @@
 	
 	<h1>Welcome to our AJ projects</h1>
 	
-</form>
+	
+
 
 </body>
 </html>

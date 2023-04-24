@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.xworkz.project.entity.ProjectEntity;
+import com.xworkz.project.entity.TechnologyEntity;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -34,11 +35,12 @@ public class ProjectRepoImpl implements ProjectRepo {
 		EntityManager em = this.entityManagerFactory.createEntityManager();
 
 		try {
-
+			log.info("doing transaction in repoImpl in try block ");
 			EntityTransaction et = em.getTransaction();
 			et.begin();
 			em.persist(entity);
 			et.commit();
+			log.info("transaction completed");
 			return true;
 		} finally {
 			em.close();
@@ -110,15 +112,19 @@ public class ProjectRepoImpl implements ProjectRepo {
 	}
 
 	@Override
-	public ProjectEntity signIn(String userId, String password) {
+	public ProjectEntity signIn(String userId) {
+		log.info("Running Sign In in repo impl");
 		EntityManager manager = this.entityManagerFactory.createEntityManager();
+		log.info("Entity maneger created ");
 		try {
-			Query query = manager.createNamedQuery("findByUserIdAndPassword");
+			log.info("running in try block");
+			Query query = manager.createNamedQuery("uIdandPsw");
 			query.setParameter("uId", userId);
-			query.setParameter("pswd", password);
+			
 			Object object = query.getSingleResult();
 			ProjectEntity entity = (ProjectEntity) object;
 			log.info("" + entity);
+			log.info("try block process completed");
 			return entity;
 		} finally {
 			manager.close();
@@ -132,15 +138,19 @@ public class ProjectRepoImpl implements ProjectRepo {
 
 		EntityManager manager = this.entityManagerFactory.createEntityManager();
 		try {
+			
+			log.info("Running login count in repo impl");
 
 			EntityTransaction transaction = manager.getTransaction();
 			transaction.begin();
+			log.info("Transaction started");
 
 			Query query = manager.createNamedQuery("updateLoginCount");
-			query.setParameter("userId", userId);
-			query.setParameter("count", count);
+			query.setParameter("uID",userId );
+			query.setParameter("cut",count );					
 			query.executeUpdate();
 			transaction.commit();
+			log.info("Transaction completed");
 			return true;
 
 		} finally {
@@ -148,27 +158,30 @@ public class ProjectRepoImpl implements ProjectRepo {
 		}
 
 	}
+
 	@Override
 	public ProjectEntity reSetPassword(String email) {
-		
-		EntityManager manager=this.entityManagerFactory.createEntityManager();
-		
+
+		EntityManager manager = this.entityManagerFactory.createEntityManager();
+
 		try {
-			EntityTransaction transaction=manager.getTransaction();
+			log.info("Running reset password in try block of repo impl ");
+			EntityTransaction transaction = manager.getTransaction();
 			transaction.begin();
 			
-			Query query=manager.createNamedQuery("email");
-			query.setHint("id", email);
-			Object object=query.getSingleResult();
-			ProjectEntity entity=(ProjectEntity)object;
-			log.info(""+entity);
+			Query query = manager.createNamedQuery("reEmail");
+			Query em=query.setParameter("eId", email);
+		System.out.println("dont know what is this : "+em);
+			Object object = query.getSingleResult();
+			ProjectEntity entity = (ProjectEntity) object;
+			log.info("" + entity);
+			log.info("Running reset password completed in try block of repo impl  ");
 			return entity;
-			
-		}finally {
-			manager.close();			
+
+		} finally {
+			manager.close();
 		}
-		 
-		
+
 	}
 
 	@Override
@@ -176,11 +189,13 @@ public class ProjectRepoImpl implements ProjectRepo {
 
 		EntityManager manager = this.entityManagerFactory.createEntityManager();
 		try {
+			log.info("Running update try block in repo impl");
 			EntityTransaction transaction = manager.getTransaction();
 
 			transaction.begin();
 			manager.merge(entity);
 			transaction.commit();
+			log.info("Running update completed try block in repo impl");
 			return true;
 
 		} finally {
@@ -191,23 +206,39 @@ public class ProjectRepoImpl implements ProjectRepo {
 
 	@Override
 	public boolean updatePassword(String userId, String password, Boolean resetPassword) {
-		EntityManager manager=this.entityManagerFactory.createEntityManager();
+		EntityManager manager = this.entityManagerFactory.createEntityManager();
 		try {
-			EntityTransaction transaction=manager.getTransaction();
+			EntityTransaction transaction = manager.getTransaction();
 			transaction.begin();
-			
-			Query query=manager.createNamedQuery("updatePassword");
+
+			Query query = manager.createNamedQuery("updatePassword");
 			query.setParameter("uu", userId);
 			query.setParameter("up", password);
 			query.setParameter("urp", resetPassword);
 			query.executeUpdate();
 			transaction.commit();
 			return true;
-			
-			}finally {
-				manager.close();
+
+		} finally {
+			manager.close();
 		}
-		
+
+	}
+	
+	
+	@Override
+	public boolean techSave(TechnologyEntity techEntity) {
+		log.info("Running technology save in repo impl");
+		EntityManager manager=this.entityManagerFactory.createEntityManager();
+		try {
+			EntityTransaction transaction=manager.getTransaction();
+			transaction.begin();
+			manager.persist(techEntity);
+			transaction.commit();		
+		return true;
+		}finally {
+			manager.close();
+		}
 	}
 
 }

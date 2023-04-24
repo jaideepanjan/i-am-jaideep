@@ -9,7 +9,7 @@ import com.xworkz.jet.service.JetSrviceImpl;
 
 public class JetRunner {
 
-	public static void main(String[] args) {
+	public static void main(String[] ivar) {
 
 		JetDTO jet = new JetDTO("APJA", 4654.23, "Black", 6, 1.5f);
 

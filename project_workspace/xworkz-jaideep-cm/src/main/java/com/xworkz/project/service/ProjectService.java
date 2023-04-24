@@ -7,12 +7,13 @@ import java.util.Set;
 import javax.validation.ConstraintViolation;
 
 import com.xworkz.project.dto.ProjectDto;
+import com.xworkz.project.entity.TechnologyEntity;
 
 public interface ProjectService {
 	
 	Set<ConstraintViolation<ProjectDto>> validateAndSave(ProjectDto dto);
 	
-	boolean sendMail(String email);
+	boolean sendMail(String email,String text);
 	
 	default List<ProjectDto> findAll(){
 		return Collections.emptyList();
@@ -39,6 +40,18 @@ public interface ProjectService {
 	}
 	
 	default ProjectDto updatePassword(String userId,String password,String confirmPassword) {
+		return null;
+	}
+	
+	default ProjectDto updateProfile(String userId, String email, Long mobileNumber, String imagePath) {
+		return null;
+	}
+	
+	default ProjectDto technology(String userId,TechnologyEntity tecEnty) {
+		return null;
+	}
+	
+	default List<TechnologyEntity> techView(String userId){
 		return null;
 	}
 

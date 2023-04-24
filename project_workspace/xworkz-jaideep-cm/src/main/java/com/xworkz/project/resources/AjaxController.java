@@ -34,7 +34,7 @@ public class AjaxController {
 		
 		if(user==0) {
 			System.err.println("Running in equals condition");
-			return "";
+			return " ";
 		}
 		else {
 			return"UserId is exist"; 
@@ -42,10 +42,10 @@ public class AjaxController {
 	}
 	
 	
-	@GetMapping(value="/email/{email}",produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="/email/{mail}",produces = MediaType.APPLICATION_JSON_VALUE)
 	public String onEmail(@PathVariable String mail) {
 		Long email=this.projectService.findByEmail(mail);
-		System.err.println(email);
+		log.info(mail);
 		
 		if(email==0) {
 			System.out.println("Running in equals condition");
@@ -57,7 +57,7 @@ public class AjaxController {
 	}
 	
 	
-	@GetMapping(value="/mobileNum/{mobile}",produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="/mobileNumber/{mobile}",produces = MediaType.APPLICATION_JSON_VALUE)
     public String onMobileNum(@PathVariable Long mobileNum) {
 		Long mobileNumb=this.projectService.findByMobile(mobileNum);
 		System.out.println(mobileNumb);

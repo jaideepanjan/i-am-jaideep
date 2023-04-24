@@ -10,12 +10,13 @@
 		<spring.version> 5.3.24</spring.version>
 		<lombok.version>1.18.24</lombok.version>
 		<quarkus.version>1.13.7.Final</quarkus.version>
-		<jslt.version>1.2</jslt.version>
+		<jstl.version>1.2</jstl.version>
 		<hibernate.version>5.6.15.Final</hibernate.version>
-		<mysqlconnector.version>8.0.29</mysqlconnector.version>
-		<javax.servlet.version>4.0.0</javax.servlet.version>
-		<slf4j.version> 1.7.25</slf4j.version>
-		<mail.version> 1.6.2</mail.version>
+		<mysql.version>8.0.32</mysql.version>
+		<jackson.library>2.12.5</jackson.library>
+		<slf4j.version>1.7.25</slf4j.version>
+		<JavaMail.version>1.4</JavaMail.version>
+		<javax.servlet.version>3.1.0</javax.servlet.version>
 
 	</properties>
 	<dependencies>
@@ -35,95 +36,64 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>${lombok.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.quarkus/quarkus-hibernate-validator -->
+
 		<dependency>
 			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-hibernate-validator</artifactId>
 			<version>${quarkus.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>${jslt.version}</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/jstl/jstl -->
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
-			<version>1.2</version>
+			<version>${jstl.version}</version>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysqlconnector.version}</version>
+			<version>${mysql.version}</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>${javax.servlet.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version> 1.2.3 </version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jul-to-slf4j</artifactId>
-			<version> ${slf4j.version} </version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>log4j-over-slf4j</artifactId>
-			<version> ${slf4j.version} </version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.sun.mail</groupId>
-			<artifactId>javax.mail</artifactId>
-			<version>${mail.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>2.14.2</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.14.2</version>
+			<version>${jackson.library}</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-annotations</artifactId>
-			<version>2.14.2</version>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+			<scope>compile</scope>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>${JavaMail.version}</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -143,9 +113,17 @@
 			<version>5.7.2</version>
 		</dependency>
 		
-		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax.servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
 
 	</dependencies>
+	
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -154,6 +132,7 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -162,6 +141,7 @@
 				<configuration>
 				<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
+				
 			</plugin>
 		</plugins>
 	</build>

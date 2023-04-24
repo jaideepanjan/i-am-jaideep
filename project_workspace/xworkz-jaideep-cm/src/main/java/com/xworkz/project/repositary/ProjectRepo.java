@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.xworkz.project.dto.ProjectDto;
 import com.xworkz.project.entity.ProjectEntity;
+import com.xworkz.project.entity.TechnologyEntity;
 
 public interface ProjectRepo {
 
@@ -26,7 +27,7 @@ public interface ProjectRepo {
 		return null;
 	}
 
-	default ProjectEntity signIn(String userId, String password) {
+	default ProjectEntity signIn(String userId) {
 		return null;
 	}
 	
@@ -39,4 +40,10 @@ public interface ProjectRepo {
 	boolean updatePassword(String userId, String password,Boolean resetPassword);
 
 	boolean loginCount(String userId,int count);
+	
+	boolean techSave(TechnologyEntity techEntity);
+	
+	default List<TechnologyEntity> viewTechnologyes(String viewer){
+		return null;
+	}
 }

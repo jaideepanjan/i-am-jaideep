@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>AJ projects</title>
+<title>Login Success</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-dark bg-dark"> 
+<nav class="navbar navbar-dark bg-dark" > 
 		<!-- Navbar content -->
 		<div class="container-fluid">
 			<img
@@ -26,18 +26,30 @@
 				alt="" width="90" height="60" class="d-inline-block align-text-top">
 
 
-
+            <a href="index.jsp">Home</a> 
 			<a href="Signup.jsp">Sign Up</a> 
 			<a href="SignIn.jsp">Sign in</a> 
-			<a href="index.jsp">Home</a> 
+			
+			
+				
+				<img src="download?fileName=${dtoPic}" height="60" width="80">
+			
 		</div>
+		
+		<div align="center">
+	<h6 style="color:white">Welcome ${userID} </h6>
+	</div>
+		
+		
 
 	</nav>
 	
-	<div align="center">
-	 User Name:${userID}
-	</div>
+	 Update your Profile : <a href="UpdateProfile.jsp">Update Profile</a><br>
+	 Add  Technologies  : <a href="AddTechnologyes.jsp">Add Technology</a><br>
+	 View Technologies  : <a href="viewTech?userId=${userID}">View Technologies</a>
 	
-	<h1 Style="color:green:">Login Sucessfully</h1>
+	
+	
+	
 </body>
 </html>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>AJ projects</title>
+<title>Update Success</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -34,8 +34,10 @@
 
 	</nav>
 	
+	
+	
 	<div align="center">
-	 <h1 Style="color:green:">Update Sucessfully</h1>
+	 <h1 Style="color:green:">Password Updated Successfully Sign In using new password</h1>
 	</div>
 	
 	

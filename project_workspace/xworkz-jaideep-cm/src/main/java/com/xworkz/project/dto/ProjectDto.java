@@ -1,5 +1,7 @@
 package com.xworkz.project.dto;
 
+import java.time.LocalTime;
+
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -39,6 +41,13 @@ public class ProjectDto {
 
 	private int loginCount;
 
-	private Boolean resetPassword;
+	private boolean resetPassword;
+	
+	private LocalTime passwordChangedTime;
+	
+	private String picName;
+
+	
+	
 
 }
