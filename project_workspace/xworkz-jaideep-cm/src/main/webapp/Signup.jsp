@@ -67,8 +67,8 @@
 		   <br>
 		   
 		Mobile Number<input type="number" name="mobileNumber" id="sMobileNo" onchange="mobileValidateion()" />   
-		<span id="mobileNoError" style="color:red">${error}</span>
-		<span id="displayMobileNum" styel="color:red">${error}</span>
+		<span id="mobileNoError" Style="color:red">${error}</span>
+		<span id="displayMobileNum" Style="color:red">${error}</span>
 		<br>
 		
 		Password<input type="password" name="password" id="sPassword" onchange="passwordValidateion()"/>
@@ -111,15 +111,18 @@
 			console.log(userValue);
 			if (userValue != null && userValue != "" && userValue.length > 2
 					&& userValue.length < 30) {
-				cosole.log("Valid name");				
+				console.log("Valid name");				
 				const xhttp = new XMLHttpRequest();
 			console.log('Running ajax');
 			console.log(userValue);
 			xhttp.open("GET", "http://localhost:8080/xworkz-jaideep-cm/userId/"	+ userValue);
 			xhttp.send();
 			xhttp.onload = function() {
-				consol.log(this);
+				console.log(this);
+				console.log(this.responseText)
+				if(this.responseText!='') {
 				document.getElementById('displayUserId').innerHTML = this.responseText
+				}
 			}
 			}else {
 				console.log('Invalid User Id');
@@ -147,7 +150,7 @@
 			xhttp.open("GET", "http://localhost:8080/xworkz-jaideep-cm/email/"+emailValue);
 			xhttp.send();
 			xhttp.onload = function() {
-				consol.log(this);
+				console.log(this);
 				document.getElementById('displayEmailId').innerHTML = this.responseText
 			}
 		}
@@ -168,10 +171,10 @@
 			console.log('Running Ajax');
 			console.log(mobileNoValue);
 			xhttp.open("GET","http://localhost:8080/xworkz-jaideep-cm/mobileNumber/"+mobileNoValue);
-			xhttp.sens();
+			xhttp.send();
 			xhttp.onload=function(){
 				console.log(this);
-				docoment.getElementById('displayMobileNum').innerHTNL=this.responseText
+				document.getElementById('displayMobileNum').innerHTML=this.responseText
 			}
 		}
 		

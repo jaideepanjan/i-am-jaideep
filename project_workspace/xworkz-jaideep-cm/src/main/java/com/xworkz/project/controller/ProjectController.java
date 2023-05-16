@@ -10,6 +10,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -47,8 +49,15 @@ public class ProjectController {
 	public ProjectController() {
 		log.info("Created" + this.getClass().getSimpleName());
 	}
-
-	@PostMapping("/ivar")
+	
+	
+	private List<String> tLang=Arrays.asList("Java","Python"," SQL" ,"PHP","HTML","CSS","Matlab");
+	private List<String> openSource=Arrays.asList("Yes","No");
+	private List<String> osTypes=Arrays.asList("Windows","Macintosh","Unix/Linux");
+	
+			
+			
+			@PostMapping("/ivar")
 	public String onSignUp(ProjectDto dto, Model model) {
 
 		Set<ConstraintViolation<ProjectDto>> violations = this.projectService.validateAndSave(dto);
@@ -193,6 +202,13 @@ public class ProjectController {
 		}
 
 	}
+	@GetMapping("/technologyes")
+	public String addTech(Model model) {
+		model.addAttribute("tl", tLang);
+		model.addAttribute("os", openSource);
+		model.addAttribute("ops", osTypes);
+		return "AddTechnologyes";
+	}
 
 	@PostMapping("/technologyes")
 	public String onTechnologyes(String userId, TechnologyEntity techEntity, Model model) {
@@ -202,6 +218,9 @@ public class ProjectController {
 
 		model.addAttribute("techs", "technologyes added successfully ");
 		model.addAttribute("tech", techEntity);
+		model.addAttribute("tl", tLang);
+		model.addAttribute("os", openSource);
+		model.addAttribute("ops", osTypes);
 		return "AddTechnologyes";
 	}
 	
@@ -209,7 +228,7 @@ public class ProjectController {
 	public String onViewTech(@RequestParam String userId,Model model) {
 		log.info("Running view technologyes in controller ");
 		List<TechnologyEntity> technologyes=this.projectService.techView(userId);
-		model.addAttribute("viewTechno", technologyes);
+		model.addAttribute("tecList", technologyes);
 		
 		return "ViewTechnolgyes";
 	}

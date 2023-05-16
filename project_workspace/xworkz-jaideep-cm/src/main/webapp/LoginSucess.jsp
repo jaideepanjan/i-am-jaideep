@@ -44,9 +44,9 @@
 
 	</nav>
 	
-	 Update your Profile : <a href="UpdateProfile.jsp">Update Profile</a><br>
-	 Add  Technologies  : <a href="AddTechnologyes.jsp">Add Technology</a><br>
-	 View Technologies  : <a href="viewTech?userId=${userID}">View Technologies</a>
+	 Update your Profile : <a href="UpdateProfile.jsp">Click Here</a><br>
+	 Add  Technologies  : <a href="technologyes">Click Here</a><br>
+	 View Technologies  : <a href="viewTech?userId=${userID}">Click Here</a><br>
 	
 	
 	

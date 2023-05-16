@@ -97,7 +97,7 @@
 			return
 		}
 		
-	    var twoMinutes = 30 * 1 ,
+	    var twoMinutes = 60 * 2 ,
 	    display = document.querySelector('#time');
 	    startTimer(twoMinutes, display);
 	}

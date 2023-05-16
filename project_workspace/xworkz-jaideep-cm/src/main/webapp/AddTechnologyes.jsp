@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,12 +24,26 @@
 			<img
 				src="https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png"
 				alt="" width="90" height="60" class="d-inline-block align-text-top">
+
+
             <a href="index.jsp">Home</a> 
-			<a href="LoginSucess.jsp">Go Back</a>		
+			 <a href="LoginSucess.jsp">Go Back</a>	
+			
+			
+				
 				<img src="download?fileName=${dtoPic}" height="60" width="80">
 			
 		</div>
+		
+		<div align="center">
+	<h6 style="color:white">Welcome ${userID} </h6>
+	</div>
+		
+		
+
 	</nav>
+	
+	
 	
 	<div align="center">
 	
@@ -45,8 +60,16 @@
 	
 	<tr>
 	<td>Technology Language</td>
-	<td><input type="text" name="language" value="${tecEnty.language}" /> </td>
-	</tr>
+<td> <select name="language">
+	<option value="${tecEnty.language}">Select </option>
+	<c:forEach items="${tl}" var="tla">
+	
+	<option value="${tla}">${tla}</option>
+	</c:forEach>
+	
+	
+	</select> </td>
+		</tr>
 	
 	<tr>
 	<td>Technology Version</td>
@@ -75,12 +98,28 @@
 	
 	<tr>
 	<td>Open Source</td>
-	<td><input type="text" name="openSource" value="${tecEnty.openSource}" /> </td>
-	</tr>
+<td> <select name="openSource">
+	<option value="${tecEnty.openSource}">Select </option>
+	<c:forEach items="${os}" var="oso">
+	
+	<option value="${oso}">${oso}</option>
+	</c:forEach>
+	
+	
+	</select> </td>
+		</tr>
 	
 	<tr>
 	<td>OS Type</td>
-	<td><input type="text" name="osType" value="${tecEnty.osType}" /> </td>
+	<td> <select name="osType">
+	<option value="${tecEnty.osType}">Select</option>
+	<c:forEach items="${ops}" var="os">
+	
+	<option value="${os}">${os}</option>
+	</c:forEach>
+	
+	
+	</select> </td>
 	</tr>
 	
 	</table>

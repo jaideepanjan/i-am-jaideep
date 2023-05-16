@@ -41,12 +41,18 @@
 		<form action="update" method="post" >
 		
 		<pre>
+		
+		<div>
+		
 		<div class="mb-3">
 		<label for="formateFile" class="form-label">Id</label>
 		<input type="text" class="form-control" name="id" readOnly value="${dto.id}">		
 		</div>
+		</div>
 		
 		
+		<div>
+		 
 		Brand<select class="form-select" aria-label = "Default select example" name="brand" required="required">
 		
 		<option selected value="${dto.brand}">${dto.brand}</option>
@@ -54,18 +60,20 @@
 		<option value="${v}">${v}</option>
 		</c:forEach>		
 		</select>
+		</div>
 		
-		
+		<div>
 		<div class="mb-3">
 		<label for="formateFile" class="form-label">Type</label>
 		<input type="text" class="form-control" name="type"  value="${dto.type}">		
 		</div>
-		
+		</div>
 		<div class="mb-3">
 		<label for="formateFile" class="form-label">Phase</label>
 		<input type="text" class="form-control" name="phases"  value="${dto.phases}">		
 		</div>
 		
+		<div>
 		Quality Standrads<select class="form-select" aria-label = "Default select example" name="qualityStandards" required="required">
 		
 		<option selected value="${dto.qualityStandards}">${dto.qualityStandards}</option>
@@ -73,52 +81,46 @@
 		<option value="${q}">${q}</option>
 		</c:forEach>
 		</select>
+		</div>
 		
 		
 		
-		
+		<div>
 		<div class="mb-3">
 		<label for="formateFile" class="form-label">Coil Type</label>
 		<input type="text" class="form-control" name="coilType"  value="${dto.coilType}">		
 		</div>
+		</div>
 		
+		
+		<div>
 		<div class="mb-3">
 		<label for="formateFile" class="form-label">KVA</label>
 		<input type="text" class="form-control" name="kva"  value="${dto.kva}">		
 		</div>
-		
+		</div>
 		<div class="mb-3">
 		<label for="formateFile" class="form-label">Weight</label>
 		<input type="text" class="form-control" name="weight"  value="${dto.weight}">		
 		</div>
 		
+		<div>
 		<div class="mb-3">
 		<label for="formateFile" class="form-label">Type of cooling</label>
 		<input type="text" class="form-control" name="typeOfCooling"  value="${dto.typeOfCooling}">		
 		</div>
+		</div>
 		
+		<div>
 		<div class="mb-3">
 		<label for="formateFile" class="form-label">Cost</label>
 		<input type="text" class="form-control" name="cost"  value="${dto.cost}">		
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
+		</div>
 		
 		
 		<input type="submit" value="update" />
-		
-		
-		
 		</pre>
-		
-		
 		</form>
-
-</body>
+		</body>
 </html>

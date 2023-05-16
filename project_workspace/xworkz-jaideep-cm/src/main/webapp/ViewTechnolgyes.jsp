@@ -24,12 +24,53 @@
 			<img
 				src="https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png"
 				alt="" width="90" height="60" class="d-inline-block align-text-top">
+
+
             <a href="index.jsp">Home</a> 
-			<a href="LoginSucess.jsp">Go Back</a>		
+			 
+			<a href="LoginSucess.jsp">Go Back</a>	
+			
+				
 				<img src="download?fileName=${dtoPic}" height="60" width="80">
 			
 		</div>
+		
+		<div align="center">
+	<h6 style="color:white">Welcome ${userID} </h6>
+	</div>
+		
+		
+
 	</nav>
+	
+	
+	
+	
+	<form action="search">
+	
+	<div>
+	<div style="color:blue" align="center"> <h3>Enter Here</h3> </div>
+	
+	<div align="center">
+	<input type="search" name="name" placeholder="name" >
+	<input type="search" name="language" placeholder="language" >
+	<input type="search" name="version" placeholder="version" >
+	<input type="search" name="owner" placeholder="owner" >
+	<input type="search" name="supportFrom" placeholder="supportFrom" >
+	<input type="search" name="supportTo" placeholder="supportTo" >
+	<input type="search" name="license" placeholder="license" >
+	<input type="search" name="openSource" placeholder="openSource" >
+	<input type="search" name="osType" placeholder="osType" ></div>
+	
+	<input type="hidden" name="userId" value="${userID}" >
+	
+	<div align="center"> <input type="submit" value="Search" > </div>
+	
+	
+	</div>
+		
+	</form>
+	
 	
 	<table class="table table-dark table-hover">
 	
@@ -45,7 +86,7 @@
 	<th>OS Type</th>
 	</tr>
 	
-	<c:forEach items="${viewTechno}" var="aj">
+	<c:forEach items="${tecList}" var="aj">
 	
 	<tr>
 	<td>${aj.name}</td>

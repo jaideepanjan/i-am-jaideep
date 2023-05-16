@@ -120,14 +120,14 @@ public class ProjectServiceImpl implements ProjectService {
 
 		//String portNumber = "587";// 485,587,25
 		String hostName = "smtp.office365.com";
-		 String fromEmail = "amul.17@outlook.com";
-		 String password = "Amulanju@17";
+		 String fromEmail = "jaideepanjan@outlook.com";
+		 String password = "Jaideep@17";
 		String to = email;
 
 		Properties prop = new Properties();
 
 		prop.put("mail.smtp.host", hostName);
-		prop.put("mail.smtp.prot", 587);
+		prop.put("mail.smtp.prot", 25);
 		prop.put("mail.smtp.starttls.enable", "true");
 		prop.put("mail.debug", "true");
 		prop.put("mail.smtp.auth", "true");
@@ -250,14 +250,14 @@ public class ProjectServiceImpl implements ProjectService {
 			entity.setUpdatedDate(LocalDateTime.now());
 			entity.setLoginCount(0);
 			entity.setResetPassword(true);
-			entity.setPasswordChangedTime(LocalTime.now().plusSeconds(240));
+			entity.setPasswordChangedTime(LocalTime.now().plusSeconds(120));
 			boolean update = this.projectRepo.update(entity);
 			log.info("(Running in service impl) updation in entity completed ");
 
 			if (update) {
 				log.info("updating done sending mail");
 				boolean sendEmail = this.sendMail(entity.getEmail(),
-						"Please Log in using OTP and re set your Password with in 240 Seconds ,Your OTP is : "
+						"Please Log in using OTP, and reset your Password with in 120 Seconds(2 minits), Your OTP is : "
 								+ reSetPassword);
 				log.info("mail sent ");
 				log.info("OTP is : "+reSetPassword);
