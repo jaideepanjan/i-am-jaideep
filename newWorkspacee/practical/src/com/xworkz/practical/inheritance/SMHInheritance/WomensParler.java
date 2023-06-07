@@ -1,4 +1,4 @@
-package com.xworkz.practical.inheritance;
+package com.xworkz.practical.inheritance.SMHInheritance;
 
 public class WomensParler  extends Parlour{
 	
